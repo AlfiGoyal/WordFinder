@@ -79,6 +79,18 @@ Then we covert these into list of strings in which each string element is the ro
 t = 
 ['', 'UMRLPQSJAQNDHJO', 'MAYHGKRKTHFSHNL', 'FRUIBUELBBCBJBL', 'LKDZDTTEUERRKRB', 'SESPJXTEPQDSAPB', 'CSQIUQOBEPIRGET', 'QUKUIRPQECBDPNS', 'IISRLNSLSRMFEOA', 'WKYMKOEIUOXGXCM', 'REKORBMMOSAGRBW', 'OXLWXFORHKAEPPA', 'ZPSALEHHARDWOOD', 'AAEKDTGLALYBVTO', 'ROPNAEHGXDENBFW']
 ```
+Now we call the function ```get_all_substrings()``` which inputs each string for the list as input and returns list of all the words of length 4 or more possible using that string to ```returnFinalList()```. Next returnFinalList() matches this list to the dictionary words and returns the matched words in the string finalList. Next, I sort this finalList to decrease the run time.
+If you print the finalList(for this example) it comes out to be:
+```
+['SALE', 'HARD', 'WOOD', 'MAST', 'CONE', 'USEE', 'SEEP', 'HOME', 'SPOT', 'POTT', 'MARK', 'FETE', 'TOPS', 'PEES', 'PEAK', 'ROKE', 'OKER', 'GRIP', 'RIPE', 'BLEU', 'HOUSE', 'HOMES', 'OTTER', 'RAZOR', 'HELAS', 'BROKE', 'ROKER', 'GRIPE', 'POTTER', 'OTTERS', 'BROKER', 'SPOTTER', 'POTTERS', 'HARDWOOD', 'SPOTTERS']
+```
 
-
-## Results
+## Final Results
+In order to print the words that removes all the substrings from above finalList I used the command
+```
+ print [j for i, j in enumerate(finalList) if all(j not in k for k in finalList[i + 1:])]
+```
+which gave me the final result: A list with the longest matched words.
+```
+['SALE', 'MAST', 'CONE', 'USEE', 'SEEP', 'MARK', 'FETE', 'TOPS', 'PEES', 'PEAK', 'BLEU', 'HOUSE', 'HOMES', 'RAZOR', 'HELAS', 'GRIPE', 'BROKER', 'HARDWOOD', 'SPOTTERS']
+```
