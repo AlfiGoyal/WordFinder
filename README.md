@@ -82,7 +82,7 @@ t =
 Now we call the function ```get_all_substrings()``` which inputs each string for the list as input and returns list of all the words of length 4 or more possible using that string to ```returnFinalList()```. Next returnFinalList() matches this list to the dictionary words and returns the matched words in the string finalList. Next, I sort this finalList to decrease the run time.
 If you print the finalList(for this example) it comes out to be:
 ```
-['SALE', 'HARD', 'WOOD', 'MAST', 'CONE', 'USEE', 'SEEP', 'HOME', 'SPOT', 'POTT', 'MARK', 'FETE', 'TOPS', 'PEES', 'PEAK', 'ROKE', 'OKER', 'GRIP', 'RIPE', 'BLEU', 'HOUSE', 'HOMES', 'OTTER', 'RAZOR', 'HELAS', 'BROKE', 'ROKER', 'GRIPE', 'POTTER', 'OTTERS', 'BROKER', 'SPOTTER', 'POTTERS', 'HARDWOOD', 'SPOTTERS']
+['MAST', 'CONE', 'USEE', 'SEEP', 'HOME', 'SPOT', 'POTT', 'PEAK', 'ROKE', 'OKER', 'GRIP', 'RIPE', 'BLEU', 'MARK', 'FETE', 'TOPS', 'PEES', 'SALE', 'HARD', 'WOOD', 'HOUSE', 'HOMES', 'OTTER', 'RAZOR', 'HELAS', 'BROKE', 'ROKER', 'GRIPE', 'POTTER', 'OTTERS', 'BROKER', 'SPOTTER', 'POTTERS', 'SPOTTERS', 'HARDWOOD']
 ```
 
 ## Final Results
@@ -92,5 +92,5 @@ In order to print the words that removes all the substrings from above finalList
 ```
 which gave me the final result: A list with the longest matched words.
 ```
-['SALE', 'MAST', 'CONE', 'USEE', 'SEEP', 'MARK', 'FETE', 'TOPS', 'PEES', 'PEAK', 'BLEU', 'HOUSE', 'HOMES', 'RAZOR', 'HELAS', 'GRIPE', 'BROKER', 'HARDWOOD', 'SPOTTERS']
+['MAST', 'CONE', 'USEE', 'SEEP', 'PEAK', 'BLEU', 'MARK', 'FETE', 'TOPS', 'PEES', 'SALE', 'HOUSE', 'HOMES', 'RAZOR', 'HELAS', 'GRIPE', 'BROKER', 'SPOTTERS', 'HARDWOOD']
 ```
