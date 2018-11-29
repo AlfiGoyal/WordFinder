@@ -8,9 +8,10 @@ Given a string input, this program finds all the 4 letter or longer words. It pr
 I have spinned up an amazon ec2 instance(you could work on any linux machine). I am using Python 2.7.14.
 
 ## Approach
-I start my script by grabbing the local dictionary words present in the location /usr/share/dict/words. Next I input my string. I could use string of any length and height. The string should be in similar format:
+I start my script by grabbing the local dictionary words present in the location /usr/share/dict/words. Next I input my string. I could use string of any length and height. The string should be given in similar format:
 ```
-'''A T L L F U V D E Y O B Z V D
+'''
+A T L L F U V D E Y O B Z V D
 W F B N E D X G H E A N P O R
 O T V B Y L A L G T D K E A A
 D O O W D R A H H E L A S P Z
@@ -27,4 +28,57 @@ L N H S F H T K R K G H Y A M
 O J H D N Q A J S Q P L R M U
 '''
 ```
+In case you want to read the string interactively in the command line simply add ```.read``` to the input variable. Next I removed the spaces in between the letters to make it computer readable string. The output in our example looks like:
+```
+ATLLFUVDEYOBZVD
+WFBNEDXGHEANPOR
+OTVBYLALGTDKEAA
+DOOWDRAHHELASPZ
+APPEAKHROFXWLXO
+WBRGASOMMBROKER
+MCXGXOUIEOKMYKW
+AOEFMRSLSNLRSII
+SNPDBCEQPRIUKUQ
+TEGRIPEBOQUIQSC
+BPASDQPETXJPSES
+BRKRREUETTDZDKL
+LBJBCBBLEUBIURF
+LNHSFHTKRKGHYAM
+OJHDNQAJSQPLRMU
+```
+Next I calculated the row length of the puzzleString. I simply tracked index of /n character and incremented it by 1 as the index starts with 0. Next I tried to get each letter from the string with their position index whose output looked similar to:
+```
+charOfStringWithIndex = [('A', (0, 0)), ('T', (0, 1)), ('L', (0, 2)), ('L', (0, 3)), .....
+```
+Going further, my approach is to rearrange the ```charOfStringWithIndex``` into 4 different list in the directions ```down```,```upwards```,```left```and ```right```. Basically an act of transposing the string which should output ```down <- AWODA...```, ```upwards <- UMFLS...```, ```right <- ATLLFU...``` and ```left <- DVZB...``` with their respective indexes. Basically I am trying to capture possible strings(in the form of letter and their corresponding indexes) in each direction since the computer can read the strings only from left to right.
 
+Next we call a function ```returnFinalList```. Here we first combine the above letters to one string i.e. of each row in the form:
+```
+string = 
+
+UMRLPQSJAQNDHJO
+MAYHGKRKTHFSHNL
+FRUIBUELBBCBJBL
+LKDZDTTEUERRKRB
+SESPJXTEPQDSAPB
+CSQIUQOBEPIRGET
+QUKUIRPQECBDPNS
+IISRLNSLSRMFEOA
+WKYMKOEIUOXGXCM
+REKORBMMOSAGRBW
+OXLWXFORHKAEPPA
+ZPSALEHHARDWOOD
+AAEKDTGLALYBVTO
+ROPNAEHGXDENBFW
+DVZBOYEDVUFLLTA
+```
+Note: This is only for one direction. Similar strings are computed for other directions as well.
+Then we covert these into list of strings in which each string element is the row of that string. For example ```t``` for above string will be:
+
+```
+t = 
+['', 'UMRLPQSJAQNDHJO', 'MAYHGKRKTHFSHNL', 'FRUIBUELBBCBJBL', 'LKDZDTTEUERRKRB', 'SESPJXTEPQDSAPB', 'CSQIUQOBEPIRGET', 'QUKUIRPQECBDPNS', 'IISRLNSLSRMFEOA', 'WKYMKOEIUOXGXCM', 'REKORBMMOSAGRBW', 'OXLWXFORHKAEPPA', 'ZPSALEHHARDWOOD', 'AAEKDTGLALYBVTO', 'ROPNAEHGXDENBFW']
+```
+
+
+## Results
