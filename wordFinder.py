@@ -32,7 +32,7 @@ charOfStringWithIndex = [(letter, divmod(index, length))
 
 
 wordlines = {}
-#Convert the puzzleString
+#Convert the puzzleString in various directions i.e left,right,upwards and downwards
 wordlines['down'] = []
 for x in range(length):
     for i in range(x, len(charOfStringWithIndex), length):
