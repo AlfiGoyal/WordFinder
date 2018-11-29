@@ -1,4 +1,13 @@
-# WordFinder
+:doctype: article
+:blank: pass:[ +]
+
+:sectnums!:
+
+= WordFinder
+Alfi Goyal <alfigoyal@gmail.com>
 
 == Overview
-I have tried to grab the words from a puzzle using python.
+
+Hi This is the overview 
+== Requirements
+
