@@ -2,13 +2,13 @@
 Alfi Goyal <alfigoyal@gmail.com>
 
 ## Overview
-Given a string input, this program finds all the 4 letter or longer words. It prints out the longest valid word in a sequence of letters.
+Given a 2D string input, this program identifies all the words equal to length 4 or more letters in the string in four directions i.e upwards, downwards, right and left. The program is also intelligent enough to print the longest valid word i.e it excludes all the substrings from a given list.
 
 ## Environment Setup
-I have spinned up an amazon ec2 instance(you could work on any linux machine). I am using Python 2.7.14.
+Spun up an Amazon EC2 instance(you could work on any linux machine).Also, I am using Python 2.7.14.
 
 ## Approach
-I start my script by grabbing the local dictionary words present in the location /usr/share/dict/words. Next I input my string. I could use string of any length and height. The string should be given in similar format:
+I started my script by retrieving the local dictionary words present in the location /usr/share/dict/words. Next I input my string. I could use string of any length and height. The string should be given in similar format:
 ```
 '''
 A T L L F U V D E Y O B Z V D
