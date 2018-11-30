@@ -1,5 +1,9 @@
 # Read all the words found in /usr/share/dict/words
 dictWords = [line.strip() for line in open('/usr/share/dict/words')]
+dictWordsGreaterThanFour = []
+for i in range(0,len(dictWords)-1):
+   if len(dictWords[i]) > 3:
+       dictWordsGreaterThanFour.append(dictWords[i])
 
 # Entering the puzzle string
 puzzleString ='''A T L L F U V D E Y O B Z V D
@@ -66,7 +70,7 @@ def returnFinalList(lines):
         for i in range(0,len(t)-1):
             n = get_all_substrings(t[i])
             for word in n:
-                if word.lower() in dictWords:
+                if word.lower() in dictWordsGreaterThanFour:
                     finalList.append(word)
     finalList = sorted(finalList, key = len)
     # print finalList in order to retrieve list of matched substrings as well
