@@ -8,7 +8,7 @@ Given a 2D string input, this program identifies all the words equal to length 4
 Spun up an Amazon EC2 instance(you could work on any linux machine).Also, I am using Python 2.7.14.
 
 ## Approach
-I started my script by retrieving the local dictionary words present in the location /usr/share/dict/words. Next I input my string. I could use string of any length and height. The string should be given in similar format:
+I started my script by retrieving the local dictionary words present in the location /usr/share/dict/words and saving all the words of length greater than three(length four or more) to a list called ```dictWordsGreaterThanFour```. Next I input my string. I could use string of any length and height. The string should be given in similar format:
 ```
 '''
 A T L L F U V D E Y O B Z V D
@@ -79,7 +79,7 @@ Then we covert these into list of strings in which each string element is the ro
 t = 
 ['', 'UMRLPQSJAQNDHJO', 'MAYHGKRKTHFSHNL', 'FRUIBUELBBCBJBL', 'LKDZDTTEUERRKRB', 'SESPJXTEPQDSAPB', 'CSQIUQOBEPIRGET', 'QUKUIRPQECBDPNS', 'IISRLNSLSRMFEOA', 'WKYMKOEIUOXGXCM', 'REKORBMMOSAGRBW', 'OXLWXFORHKAEPPA', 'ZPSALEHHARDWOOD', 'AAEKDTGLALYBVTO', 'ROPNAEHGXDENBFW']
 ```
-Now we call the function ```get_all_substrings()``` which inputs each string for the list as input and returns list of all the words of length 4 or more possible using that string to ```returnFinalList()```. Next returnFinalList() matches this list to the dictionary words and returns the matched words in the string finalList. Next, I sort this finalList to decrease the run time.
+Now we call the function ```get_all_substrings()``` which inputs each string for the list as input and returns list of all the words of length 4 or more possible using that string to ```returnFinalList()```. Next returnFinalList() matches this list to the dictionary words saved in the list ```dictWordsGreaterThanFour``` and returns the matched words in the string finalList. Next, I sort this finalList to decrease the run time.
 If you print the finalList(for this example) it comes out to be:
 ```
 ['MAST', 'CONE', 'USEE', 'SEEP', 'HOME', 'SPOT', 'POTT', 'PEAK', 'ROKE', 'OKER', 'GRIP', 'RIPE', 'BLEU', 'MARK', 'FETE', 'TOPS', 'PEES', 'SALE', 'HARD', 'WOOD', 'HOUSE', 'HOMES', 'OTTER', 'RAZOR', 'HELAS', 'BROKE', 'ROKER', 'GRIPE', 'POTTER', 'OTTERS', 'BROKER', 'SPOTTER', 'POTTERS', 'SPOTTERS', 'HARDWOOD']
